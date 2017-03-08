@@ -1,6 +1,11 @@
 # Martin Kersner, m.kersner@gmail.com
 # 2017/03/02
 
+# Prerequisities:
+# * pandas
+# * matplotlib
+# * scikit-learn
+
 # Author: meikegw
 # https://www.kaggle.com/meikegw/house-prices-advanced-regression-techniques/filling-up-missing-values
 def show_missing(df):
@@ -33,4 +38,14 @@ def plot_roc(y_test, y_pred):
   plt.tight_layout()
   plt.ylabel('True Positive Rate')
   plt.xlabel('False Positive Rate')
+  plt.show()
+
+def hist_plot(hist_dict):
+  values = list(hist_dict.values())
+  labels = list(hist_dict.keys())
+
+  x_idxs = range(len(values))
+
+  plt.bar(x_idxs, values, align='center')
+  plt.xticks(x_idxs, labels)
   plt.show()
