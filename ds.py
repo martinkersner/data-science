@@ -18,6 +18,18 @@ def show_missing_stat(df):
 def remove_missing(df, colname):
   return df[~df[colname].isnull()]
 
+# Author: meikegw
+# https://www.kaggle.com/meikegw/house-prices-advanced-regression-techniques/filling-up-missing-values
+def cat_exploration(df, column):
+  ''' Looking at categorical values '''
+  return df[column].value_counts()
+
+# Author: meikegw
+# https://www.kaggle.com/meikegw/house-prices-advanced-regression-techniques/filling-up-missing-values
+def cat_imputation(df, column, value):
+  ''' Imputing the missing values '''
+  df.loc[df[column].isnull(), column] = value
+
 def plot_roc(y_test, y_pred):
   '''
   Print ROC curve from given true labels and positive prediction probabilities.
